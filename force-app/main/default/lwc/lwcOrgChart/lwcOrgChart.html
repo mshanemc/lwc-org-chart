@@ -1,0 +1,68 @@
+<template>
+  <lightning-card>
+    <template if:false={searchMode}>
+        <lightning-button-icon slot="actions" icon-name="utility:search" variant="bare" alternative-text="search" onclick={openSearch} size="large"></lightning-button-icon>
+        <div class="whole">
+
+            <div class="managers">
+                <template for:each={reportingChain} for:item="manager">
+                    <div key={manager.id} class="manager">
+                        <lightning-avatar src={manager.photo} size="medium" fallback-icon-name="standard:user" variant="circle" onclick={userChange} data-userid={manager.id} ></lightning-avatar>
+                        <div class="slds-text-heading_small slds-p-top_small slds-text-align_center slds-text-link" onclick={userChange} data-userid={manager.id}>{manager.name}</div>
+                    </div>
+                </template>
+            </div>
+
+            <div class="primary-user">
+                <template if:true={primaryUser}>
+                    <div class="primary-user-band">
+                        <a href={mailTo}>
+                            <lightning-button-icon variant="bare" size="large" icon-class="slds-m-around_medium" icon-name="utility:email" alternative-text="email"></lightning-button-icon>
+                        </a>
+                        <div class="primary-user-details">
+                            <lightning-avatar src={primaryUser.MediumPhotoUrl} size="large" fallback-icon-name="standard:user" variant="circle" onclick={toProfile}></lightning-avatar>
+                            <div class="slds-text-heading_medium slds-p-top_small slds-text-align_center slds-text-link" onclick={toProfile}>{primaryUser.Name}</div>
+                            <div class="slds-text-align_center slds-text-color_weak" onclick={toProfile}>{primaryUser.Title}</div>
+                        </div>
+                        <a href={tel}>
+                            <lightning-button-icon variant="bare" size="large" icon-class="slds-m-around_medium" icon-name="utility:call" alternative-text="phone"></lightning-button-icon>
+                        </a>
+                    </div>
+                </template>
+            </div>
+
+            <div class="reports">
+                <template if:true={reports}>
+                    <template for:each={reports} for:item="report">
+                        <div class="report" key={report.Id}>
+                            <lightning-avatar  src={report.MediumPhotoUrl} size="medium" fallback-icon-name="standard:user" variant="circle" onclick={userChange} data-userid={report.Id} ></lightning-avatar>
+                            <div class="slds-p-top_small slds-text-body_small slds-text-align_center slds-text-link" onclick={userChange} data-userid={report.Id}>{report.Name}</div>
+                        </div>
+                    </template>
+                </template>
+            </div>
+        </div>
+    </template>
+    <template if:true={searchMode}>
+        <lightning-button-icon slot="actions" icon-name="utility:back" variant="bare" alternative-text="Cancel" onclick={cancelSearch} size="large"></lightning-button-icon>
+
+        <div class="slds-p-around_medium">
+            <lightning-layout vertical-align="end">
+                <lightning-layout-item flexibility="grow">
+                    <lightning-input type="text" label="Search for User" onchange={setSearch}></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="no-grow">
+                    <lightning-button label="Search" variant="brand" onclick={doSearch}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+            <template for:each={searchResults} for:item="result">
+                <div key={result.Id} class="slds-m-vertical_small">
+                    <div class="slds-text-link" data-userid={result.Id} onclick={selectResult}>{result.Name}</div>
+                    <div class="slds-text-color_weak" data-userid={result.Id} onclick={selectResult}>{result.Title}</div>
+                </div>
+            </template>    
+        </div>
+    </template>
+
+  </lightning-card>
+</template>

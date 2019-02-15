@@ -1,0 +1,48 @@
+
+.managers, .manager, .report, .primary-user, .whole, .primary-user-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 80px;
+}
+
+.whole {
+    min-height: 75vh;
+    justify-content: space-around; 
+}
+
+.managers {
+    justify-content: flex-end;
+    flex-grow: 4;
+    padding-bottom: 1rem;
+}
+
+.manager, .report {
+    padding: 0.5rem;
+}
+
+.primary-user {
+    width: 100%;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.primary-user-band {
+    margin: 1rem 0 1rem 0;
+    width: 100%;
+    background-color: rgba(211, 211, 211, 0.33);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reports {
+    width: 100%;
+    flex-grow: 2;
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
