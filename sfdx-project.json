@@ -1,22 +1,22 @@
 {
-    "packageDirectories": [
-        {
-            "path": "force-app",
-            "package": "lwcOrgChart",
-            "versionName": "ver 0.1",
-            "versionNumber": "0.2.0.NEXT",
-            "default": false
-        },
-        {
-            "path": "implementation",
-            "default": true
-        }
-    ],
-    "namespace": "",
-    "sfdcLoginUrl": "https://login.salesforce.com",
-    "sourceApiVersion": "45.0",
-    "packageAliases": {
-        "lwcOrgChart": "0Ho6A000000k9dTSAQ",
-        "lwcOrgChart@0.2.0-1": "04t6A000002zgGQQAY"
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "package": "lwcOrgChart",
+      "versionName": "ver 0.1",
+      "versionNumber": "0.3.0.NEXT",
+      "default": false
+    },
+    {
+      "path": "implementation",
+      "default": true
     }
+  ],
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "45.0",
+  "packageAliases": {
+    "lwcOrgChart": "0Ho6A000000k9dTSAQ",
+    "lwcOrgChart@0.2.0-1": "04t6A000002zgGQQAY"
+  }
 }
