@@ -3,13 +3,30 @@
         "experimentalDecorators": true,
         "baseUrl": ".",
         "paths": {
-            "c/lwc-org-chart": [
+            "c/lwcOrgChart": [
                 "lwcOrgChart/lwcOrgChart.js"
+            ],
+            "c/orgChartSearch": [
+                "orgChartSearch/orgChartSearch.js"
+            ],
+            "c/orgChartManagers": [
+                "orgChartManagers/orgChartManagers.js"
+            ],
+            "c/orgChartUserFields": [
+                "orgChartUserFields/orgChartUserFields.js"
+            ],
+            "c/orgChartReports": [
+                "orgChartReports/orgChartReports.js"
             ]
         }
     },
     "include": [
         "**/*",
         "../../../../.sfdx/typings/lwc/**/*.d.ts"
-    ]
+    ],
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
+    }
 }

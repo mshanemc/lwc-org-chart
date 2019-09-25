@@ -1,0 +1,17 @@
+:host {
+  width: 100%;
+  flex-grow: 2;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.report {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 80px;
+  padding: 0.5rem;
+}

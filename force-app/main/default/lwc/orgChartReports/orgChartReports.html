@@ -1,0 +1,23 @@
+<template>
+  <template if:true={reports}>
+    <template for:each={reports} for:item="report">
+      <div class="report" key={report.Id}>
+        <lightning-avatar
+          src={report.MediumPhotoUrl}
+          size="medium"
+          fallback-icon-name="standard:user"
+          variant="circle"
+          onclick={userChange}
+          data-userid={report.Id}
+        ></lightning-avatar>
+        <div
+          class="slds-p-top_small slds-text-body_small slds-text-align_center slds-text-link"
+          onclick={userChange}
+          data-userid={report.Id}
+        >
+          {report.Name}
+        </div>
+      </div>
+    </template>
+  </template>
+</template>

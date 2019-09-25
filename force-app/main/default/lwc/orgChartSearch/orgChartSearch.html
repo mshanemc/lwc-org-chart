@@ -1,0 +1,31 @@
+<template>
+  <lightning-button-icon
+    slot="actions"
+    icon-name="utility:back"
+    variant="bare"
+    alternative-text="Cancel"
+    onclick={cancelSearch}
+    size="large"
+  ></lightning-button-icon>
+
+  <div class="slds-p-around_medium">
+    <lightning-layout vertical-align="end">
+      <lightning-layout-item flexibility="grow">
+        <lightning-input type="text" label="Search for User" onchange={setSearch}></lightning-input>
+      </lightning-layout-item>
+      <lightning-layout-item flexibility="no-grow">
+        <lightning-button label="Search" variant="brand" onclick={doSearch}></lightning-button>
+      </lightning-layout-item>
+    </lightning-layout>
+    <template for:each={searchResults} for:item="result">
+      <div key={result.Id} class="slds-m-vertical_small">
+        <div class="slds-text-link" data-userid={result.Id} onclick={selectResult}>
+          {result.Name}
+        </div>
+        <div class="slds-text-color_weak" data-userid={result.Id} onclick={selectResult}>
+          {result.Title}
+        </div>
+      </div>
+    </template>
+  </div>
+</template>

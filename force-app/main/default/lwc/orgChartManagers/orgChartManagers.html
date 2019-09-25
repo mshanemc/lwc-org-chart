@@ -1,0 +1,21 @@
+<template>
+  <template for:each={reportingChain} for:item="manager">
+    <div key={manager.id} class="manager">
+      <lightning-avatar
+        src={manager.photo}
+        size="medium"
+        fallback-icon-name="standard:user"
+        variant="circle"
+        onclick={userSelect}
+        data-userid={manager.id}
+      ></lightning-avatar>
+      <div
+        class="slds-text-heading_small slds-p-top_small slds-text-align_center slds-text-link"
+        onclick={userSelect}
+        data-userid={manager.id}
+      >
+        {manager.name}
+      </div>
+    </div>
+  </template>
+</template>
