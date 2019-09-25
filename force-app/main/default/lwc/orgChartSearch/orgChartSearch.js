@@ -9,6 +9,11 @@ export default class OrgChartSearch extends LightningElement {
     this.searchString = event.detail.value;
   }
 
+  async checkEnter(event) {
+    if (event.key !== 'Enter') return;
+    await this.doSearch();
+  }
+
   async doSearch() {
     this.searchResults = await searchUsers({ searchString: this.searchString });
   }

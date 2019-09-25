@@ -1,17 +1,21 @@
 <template>
-  <lightning-button-icon
-    slot="actions"
-    icon-name="utility:back"
-    variant="bare"
-    alternative-text="Cancel"
-    onclick={cancelSearch}
-    size="large"
-  ></lightning-button-icon>
-
   <div class="slds-p-around_medium">
+    <lightning-button-icon
+      slot="actions"
+      icon-name="utility:back"
+      variant="bare"
+      alternative-text="Cancel Search"
+      onclick={cancelSearch}
+      size="large"
+    ></lightning-button-icon>
     <lightning-layout vertical-align="end">
       <lightning-layout-item flexibility="grow">
-        <lightning-input type="text" label="Search for User" onchange={setSearch}></lightning-input>
+        <lightning-input
+          type="text"
+          label="Search for User"
+          onchange={setSearch}
+          onkeyup={checkEnter}
+        ></lightning-input>
       </lightning-layout-item>
       <lightning-layout-item flexibility="no-grow">
         <lightning-button label="Search" variant="brand" onclick={doSearch}></lightning-button>
