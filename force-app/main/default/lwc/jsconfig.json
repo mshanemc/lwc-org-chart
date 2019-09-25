@@ -6,17 +6,17 @@
             "c/lwcOrgChart": [
                 "lwcOrgChart/lwcOrgChart.js"
             ],
-            "c/orgChartSearch": [
-                "orgChartSearch/orgChartSearch.js"
-            ],
             "c/orgChartManagers": [
                 "orgChartManagers/orgChartManagers.js"
             ],
-            "c/orgChartUserFields": [
-                "orgChartUserFields/orgChartUserFields.js"
-            ],
             "c/orgChartReports": [
                 "orgChartReports/orgChartReports.js"
+            ],
+            "c/orgChartSearch": [
+                "orgChartSearch/orgChartSearch.js"
+            ],
+            "c/orgChartUserFields": [
+                "orgChartUserFields/orgChartUserFields.js"
             ]
         }
     },

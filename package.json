@@ -27,6 +27,6 @@
   },
   "homepage": "https://github.com/mshanemc/lwc-org-chart",
   "devDependencies": {
-    "nodemon": "^1.18.3"
+    "nodemon": "^1.19.2"
   }
 }
